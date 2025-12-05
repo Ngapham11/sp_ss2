@@ -18,10 +18,10 @@
 <body>
 <div class="container">
     <form method="post" action="save" >
-        <div class="form-group">
-            <label for=""></label>
-            <input type="hidden" name="movieId" id="" class="form-control">
-        </div>
+<%--        <div class="form-group">--%>
+<%--            <label for=""></label>--%>
+<%--            <input type="hidden" name="movieId" id="" class="form-control">--%>
+<%--        </div>--%>
         <div class="form-group">
             <label for="">Director</label>
             <input type="text" name="director" id="" class="form-control">

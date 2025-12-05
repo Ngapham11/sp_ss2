@@ -20,8 +20,9 @@ MovieService movieService;
     @GetMapping("")
     public String movieHome(@RequestParam(name = "page",defaultValue = "1")int page,
             @RequestParam(name = "size",defaultValue = "2")int size,
+            @RequestParam(name = "searchTitle",defaultValue = "")String searchTitle,
             Model model) {
-        Page<Movie>moviePage=movieService.findAll(PageRequest.of(page - 1,size));
+        Page<Movie>moviePage=movieService.findAll(PageRequest.of(page - 1,size),searchTitle);
         List<Integer> pages=new ArrayList<>();
         int totalPages=moviePage.getTotalPages();
         if(totalPages > 0){
@@ -50,4 +51,10 @@ MovieService movieService;
         }movieService.save(movie);
         return "redirect:/";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteMovie(@PathVariable int id){
+     movieService.deleteById(id);
+     return "redirect:/";
+    }
+
 }

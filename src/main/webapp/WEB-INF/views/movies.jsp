@@ -18,6 +18,15 @@
 </head>
 <body>
 <div class="container">
+
+    <form method="get" action="" >
+        <div class="form-group">
+            <input type="text" name="searchTitle"  class="form-control" placeholder="Search Title" >
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
     <table class="table">
         <thead>
         <tr>
@@ -38,8 +47,8 @@
                 <td>${m.releaseDate}</td>
                 <td>${m.title}</td>
                 <td>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Sủa</a>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Xóa</a>
+                    <a name="" id="" class="btn btn-primary" href="#" >Sủa</a>
+                    <a name="" id="" class="btn btn-primary" href="/delete/${m.movieId}" onclick="return confirm('Bạn có chắc chắn muốn xóa không??')">Xóa</a>
                 </td>
             </tr>  
         </c:forEach>
